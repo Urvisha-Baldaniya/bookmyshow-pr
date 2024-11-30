@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= showMovie.title %>
+    </title>
+    <link rel="stylesheet" href="/fonts/roboto/stylesheet.css" type="text/css">
+    <link rel="stylesheet" href="/fonts/remix/remixicon.css" type="text/css">
+    <link rel="stylesheet" href="/css/about.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="navbar d-flex align-items-center justify-between">
+                <div class="d-flex align-items-center">
+                    <a href="javascript:void(0)">
+                        <img src="/img/bookmyshow-logo.png" title="bookmyshow-logo" alt="bookmyshow-logo" width="100px"/>
+                    </a>
+                    <div>
+                        <input type="text" placeholder="Search For Movies" class="search"/>
+                    </div>
+                </div>
+                <ul class="d-flex">
+                    <li>
+                        <a href="/auth/sign" class="theme-btn">Sign in</a>
+                    </li>
+                    <li>
+                        <a href="/form" class="add"><i class="ri-add-large-fill"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="about">
+        <div class="bg-about relative">
+                <img src="/<%= showMovie.background_img %>" title="background_img" alt="background_img"  width="100%" height="500px"/>
+            
+            <div class="bg-overlay">
+
+          <div class="container">
+            <div class="about-inner d-flex align-items-center justify-content-center">
+                <div class="about-img relative">
+                    <img src="/<%= showMovie.poster_img %>" title="poster_img" alt="poster_img"  width="250px" height="380"/>
+                    <span class="movie-overlay">In Cinemas</span>
+                </div>
+                <div class="about-content">
+                    <ul>
+                        <li>
+                            <h2><%= showMovie.title %></h2>
+                        </li>
+                        <li class="d-flex align-items-center justify-between">
+
+                            <a>
+                                <i class="ri-star-fill"></i>
+                                <span><%= showMovie.rating %> / 10 </span>
+                                <span style="margin-left: 5px;">(189.7k Votes)</span>
+                                <i class="ri-arrow-right-wide-line"></i>
+                            </a>
+                            <a href="javascript:void(0)" class="rate">Rate Now</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <span><%= showMovie.format %></span>
+                                <span><%= showMovie.language %></span>
+                            </a>
+                        </li>
+                        <li>
+                            <span><%= showMovie.cinema %></span>
+                            <span><%= showMovie.length %></span>
+                            <span><%= showMovie.certificate %></span>
+                            <span><%= showMovie.date %></span> 
+                        </li>
+                    </ul>
+
+                    <a href="/auth/loginPage"><button>Book tickets</button></a>
+                    
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-description">
+        <h2><%= showMovie.title %></h2>
+        <p style="margin-top: 20px;"><%= showMovie.description %></p>
+    </div>
+        
+</section>
+    
+</body>
+</html>

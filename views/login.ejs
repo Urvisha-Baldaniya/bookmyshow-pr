@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/fonts/roboto/stylesheet.css" type="text/css">
+    <link rel="stylesheet" href="/fonts/remix/remixicon.css" type="text/css">
+    <link rel="stylesheet" href="/css/login.css" type="text/css">
+</head>
+<body>
+
+    <div class="main">
+        <div class="inner">
+            
+            <form action="/auth/login" method="POST">
+                <h2>Login Now</h2>
+                <div>
+                    <input type="email" placeholder="Email" id="email" name="email"/>
+                </div>
+                <div>
+                    <input type="password" placeholder="Password" id="password" name="password"/>
+                </div>
+                <div class="login-btn">
+                    <button type="submit">Login</button>
+                    <a href="/auth/sign">Sign In</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

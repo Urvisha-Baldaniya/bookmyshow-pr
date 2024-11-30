@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+
+    <div class="main">
+        <div class="inner">
+            <h1>Add Movies : </h1>
+            <form action="/movieData/addData" method="POST" enctype="multipart/form-data">
+
+                <div class="item">
+                    <label for="">Title :-</label>
+                    <input type="text" id="title" name="title" placeholder="Enter Movie Name">
+                </div>
+                <div class="item">
+                    <label for="cinema">Cinema :-</label>
+                    <input type="checkbox" name="cinema" id="" value="Drama">Drama
+                    <input type="checkbox" name="cinema" id="" value="Action">Action
+                    <input type="checkbox" name="cinema" id="" value="Comedy">Comedy
+                    <input type="checkbox" name="cinema" id="" value="Family">Family
+                    <input type="checkbox" name="cinema" id="" value="Romentic">Romentic
+                    <input type="checkbox" name="certificate" id="" value="Crime">Crime
+                    <input type="checkbox" name="cinema" id="" value="Thriller">Thriller
+                    <input type="checkbox" name="cinema" id="" value="Horror">Horror
+                    <input type="checkbox" name="cinema" id="" value="Psychological">Psychological
+                    <input type="checkbox" name="cinema" id="" value="Historical">Historical
+                    <input type="checkbox" name="cinema" id="" value="Social">Social
+                    <input type="checkbox" name="cinema" id="" value="Animation">Animation
+                    <input type="checkbox" name="cinema" id="" value="Biography">Biography
+
+                </div>
+                <div class="item">
+                    <label for="">Format :-</label>
+                    <input type="checkbox" name="format" id="" value="2D">2D
+                    <input type="checkbox" name="format" id="" value="3D">3D
+                    <input type="checkbox" name="format" id="" value="4DX">4DX
+                    <input type="checkbox" name="format" id="" value="4DX 3D">4DX 3D
+                </div>
+
+                <div class="item">
+                    <label for="">Duration :-</label>
+                    <input type="text" name="length" id="length" value="" placeholder="Enter Movie Length">
+                </div>
+
+                <div class="item">
+                    <label for="">Language :-</label>
+                    <input type="checkbox" name="language" id="" value="Hindi">Hindi
+                    <input type="checkbox" name="language" id="" value="Gujarati">Gujarati
+                    <input type="checkbox" name="language" id="" value="English">English
+
+                </div>
+                <div class="item">
+                    <label for="">Certificate :-</label>
+                    <input type="radio" name="certificate" id="certificate" value="U/A">U/A
+                    <input type="radio" name="certificate" id="certificate" value="U">U
+                    <input type="radio" name="certificate" id="certificate" value="A">A
+                    <input type="radio" name="certificate" id="certificate" value="S">S
+                </div>
+
+                <div class="item d-flex align-items-center">
+                    <label for="">Rating :-</label>
+                    <input type="text" id="rating" placeholder="Enter Movie Rating" name="rating">
+                <!-- </div>
+                <div class="item"> -->
+                <div style="margin-left: 80px;">
+                <label for="">Release Date :-</label>
+                <input type="date" id="date" name="date" style="width: 200px;">
+                </div>
+                </div>
+                <div class="item">
+                <label for="">Poster :-</label>
+                <input type="file" id="poster_img" accept="image/*" name="poster_img">
+                <!-- </div>
+                <div class="item"> -->
+                <label for="">Background Poster :-</label>
+                <input type="file" id="background_img" accept="image/*" name="background_img">
+                </div>
+                <div class="item">
+                <label for="">Description :-</label>
+                <textarea name="description" id="description" placeholder="Enter Movie Description" rows="3" cols="50"></textarea>
+            </div>
+                <div>
+                    <button type="submit">Add Movie</button>
+                    <a href="/">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

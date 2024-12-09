@@ -31,6 +31,7 @@ const uploadFields = multer({ storage: fileupload }).fields([
 
 movieRoutes.post("/addData", uploadFields, async(req, res)=>{
 try{
+    console.log("hello");
     console.log(req.body);
     console.log(req.files);
 
@@ -42,19 +43,19 @@ try{
     const background_img = req.files.background_img[0].path;
 
 
-    const {title, rating, cinema, length, format, certificate, date, release, description, language} = req.body;
+    const {title, rating, cinema, length, format, certificate, date, description, language} = req.body;
     console.log(req.body);
 
-    if(!title || !rating || !cinema || !format || !certificate || !date || !release || !description || !language){
-        return res.status(400).json({ error: "please, All feilds are required." });
+    if(!title || !rating || !cinema || !length || !format || !certificate || !date || !description || !language){
+        return res.status(400).json({ error: "please, All feilds are required.",error });
     }
 
-    const addMovie = new movie({title, rating, cinema, length, format, certificate, date, release, description,poster_img, background_img, language});
+    const addMovie = new movie({title, rating, cinema, length, format, certificate, date, description,poster_img, background_img, language});
     await addMovie.save();
     console.log(addMovie);
 
 }catch(error){
-    res.status(400).json({msg : "data not found", error});
+    res.status(400).json({msg : "data not foud" ,error});
 }
 })
 

@@ -1,11 +1,26 @@
 const express = require("express");
 const app = express();
 const ejs = require("ejs");
-const connection = require("./connection/db");
+const mongoose = require("mongoose");
+// const connection = require("./connection/db");
 const movieRoute = require("./controller/routes.user");
 const movie = require("./model/model.user");
 const authRoute = require("./controller/routes.auth");
 const path = require("path");
+
+const connectDB = async () => {
+    try {
+      await mongoose.connect(
+        "mongodb+srv://urvishabaldaniya:urvisha97531@cluster0.2v2ci.mongodb.net/data",
+        { useNewUrlParser: true, useUnifiedTopology: true ,serverSelectionTimeoutMS:5000}
+      );
+      console.log("Mongoose is connected");
+    } catch (err) {
+      console.error("Connection error:", err);
+    }
+  };
+  
+  connectDB();
 
 const port = 44000;
 
@@ -30,12 +45,9 @@ app.get('/', async(req, res) => {
 app.get("/home", (req, res)=>{
     res.render("home");
 })
-app.get("/form", (req, res)=>{
-    res.render("form");
-})
 
-app.listen(port, async(err)=>{
-    await connection;
+app.listen(port, (err)=>{
+    // await connection;
     err?console.log(err):console.log("server in running at port "+port);
 })
 
